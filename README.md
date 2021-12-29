@@ -43,6 +43,7 @@ dmenu.selforeground : selected foreground color
 
 ## Requirements
 In order to build dmenu you need the Xlib header files.
+
 `doas apk add libx11-dev libxinerama-dev libxft-dev`
 
 ## Installation
@@ -51,6 +52,7 @@ the `/usr/local` namespace by default).
 
 Afterwards enter the following command to build and install dmenu
 (if necessary as root):
+
 `make clean install`
 
 ## Running dmenu
