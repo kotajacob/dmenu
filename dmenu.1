@@ -37,6 +37,32 @@ matching the tokens in the input.
 is a script used by
 .IR dwm (1)
 which lists programs in the user's $PATH and runs the result in their $SHELL.
+.P
+.B dmenu_dprint
+is a script which can use
+.IR dprint (1)
+to list programs from .desktop files. This allows customizing the names of
+programs compared to their launch command. Additionally, it will keep a cache
+of how often you run programs and sort the list by popularity.
+.P
+You may use ~/.Xresources to configure the font and colors used. These are the
+options accepted:
+.TP
+.B \dmenu.font:
+Font or font set.
+.TP
+.B \dmenu.background:
+Normal background color.
+.TP
+.B \dmenu.foreground:
+Normal foreground color.
+.TP
+.B \dmenu.selbackground:
+Selected background color.
+.TP
+.B \dmenu.selforeground:
+Selected foreground color.
+.TP
 .SH OPTIONS
 .TP
 .B \-F
