@@ -5,6 +5,15 @@ This is my personal fork with a few useful patches.
 ![1](img.webp)
 
 ## Patches
+### color emoji fonts
+I've removed a bit of code that prevented colored fonts from being loaded.
+However, that piece of code existed for good reason; the current upstream font
+rendering library, libXft does not support colored fonts. There exists a patch
+which adds support, but it has not been merged in. You must install a patched
+version of libXft or this dmenu fork may have issues. On Arch Linux it exists
+packaged on the AUR as
+[libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra).
+
 ### custom centering
 The standard center patch on suckless.org is extremely slow when reading large
 files because it reads all items, then loops through to determine the string
@@ -44,7 +53,12 @@ dmenu.selforeground : selected foreground color
 ## Requirements
 In order to build dmenu you need the Xlib header files.
 
-`doas apk add libx11-dev libxinerama-dev libxft-dev`
+`doas apk add libx11-dev libxinerama-dev libxft-bgra-dev`
+
+*Note:* This is slightly different than upstream `dmenu`. You must use a patched
+version of `libXft` such as
+[libxft-bgra](https://aur.archlinux.org/packages/libxft-bgra). This will allow
+using colored emoji fonts.
 
 ## Installation
 Edit `config.mk` to match your local setup (dmenu is installed into
